@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Turu</title>
+    <style>
+    /* #395B64 */
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: arial;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        background: rgba(255,255,255,.4);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .body{
+        animation: bg 1s forwards;
+        transition: 1s;
+    }
+    @keyframes bg {
+        to{
+            background: #395B64;
+        }
+    }
+    div.content{
+        width: 300px;
+        height: 70px;
+        padding: 4px;/* 
+        background: rgba(255,255,255,.07 */);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .bg{
+        width: 200px;
+        height: 100%;
+        background: grey;
+        border-radius: 100px;
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .bkl{
+        animation: warna 1s forwards;
+        transition: 1s;
+    }
+    @keyframes warna {
+        to{
+            background: white;
+        }
+    }
+    img{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        left: -20px;
+        position: absolute;
+    }
+    h1{
+        position: absolute;
+        left: 20px;
+        color: transparent;
+        font-size: 18px;
+        
+    }
+    h2{
+        position: absolute;
+        top: 30%;
+        color: white;
+    }
+    .right{
+        animation: anim 2s linear forwards; 
+        transition: 1s;
+    }
+    .moon{
+        display: none;
+    }
+    .sun{
+        z-index: 1;
+    }
+    
+    @keyframes anim{
+        to{
+            margin-left: 75%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>masih ada hari esok :)</h2>
+            <div class="bg">
+                <h1>Tidur</h1>
+                <img class="moon" src="m.png" alt="" />
+                <img class="sun" src="s.png" alt="" />
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8">
+        const nama = prompt("masukkan nama");
+        const moon = document.querySelector('.moon');
+        const sun = document.querySelector('.sun');
+        const body = document.querySelector('.container');
+        const bg = document.querySelector('.bg');
+        const h1 = document.querySelector('h1');
+        
+        sun.addEventListener('click', () =>{
+            moon.classList.toggle("right");
+            body.classList.toggle("body");
+            bg.classList.toggle("bkl");
+            sun.style.display = 'none';
+            sun.style.zIndex = '-2';
+            moon.style.display = 'block';
+            let nm = nama.toUpperCase();
+            h1.innerHTML = `tidur ${nm}`;
+            h1.style.color = 'black';
+            
+        })
+        
+    </script>
+</body>
+</html>
